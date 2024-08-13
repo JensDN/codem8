@@ -1,27 +1,27 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import starlight from "@astrojs/starlight";
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
 
-import tailwind from "@astrojs/tailwind";
-import starlightBlog from 'starlight-blog'
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
-  integrations: [
-    starlight({
-      title: "My delightful docs site",
-      customCss: [
-        // Path to your Tailwind base styles:
-        "./src/styles/tailwind.css",
-      ],
-      plugins: [starlightBlog()],
-    }),
-    mdx(),
-    sitemap(),
-    tailwind({
-      // Disable the default base styles:
-      applyBaseStyles: false,
-    }),
-  ],
+	integrations: [
+		starlight({
+			title: 'My Docs',
+			social: {
+				github: 'https://github.com/withastro/starlight',
+			},
+			sidebar: [
+				{
+					label: 'Guides',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Example Guide', slug: 'guides/example' },
+					],
+				},
+				{
+					label: 'Reference',
+					autogenerate: { directory: 'reference' },
+				},
+			],
+		}),
+	],
 });
