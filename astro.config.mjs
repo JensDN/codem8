@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import starlight from "@astrojs/starlight";
 
 import tailwind from "@astrojs/tailwind";
-
+import starlightBlog from 'starlight-blog'
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
@@ -15,6 +15,7 @@ export default defineConfig({
         // Path to your Tailwind base styles:
         "./src/styles/tailwind.css",
       ],
+      plugins: [starlightBlog()],
     }),
     mdx(),
     sitemap(),
