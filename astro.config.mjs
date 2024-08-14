@@ -6,23 +6,30 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'CODEM8',
-			plugins: [starlightBlog()],
+			plugins: [starlightBlog({
+				/* sidebar: [
+					{
+						label: 'Guides',
+						items: [
+							// Each item here is one entry in the navigation menu.
+							{ label: 'Example Guide', slug: 'guides/example' },
+						],
+					},
+					{
+						label: 'Reference',
+						autogenerate: { directory: 'reference' },
+					},
+				], */
+
+			})],
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
+			customCss: [
+				// Fontsource files for to regular and semi-bold font weights.
+				'@fontsource-variable/fira-code',
+				'./src/styles/custom.css'
+			  ],
 		}),
 	],
 });
