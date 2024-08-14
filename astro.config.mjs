@@ -23,7 +23,7 @@ export default defineConfig({
 			], */
 		})],
 		social: {
-			github: 'https://github.com/withastro/starlight'
+			github: 'https://github.com/JensDN'
 		},
 		customCss: [
 			// Fontsource files for to regular and semi-bold font weights.
