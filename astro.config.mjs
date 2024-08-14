@@ -5,7 +5,7 @@ import starlightBlog from 'starlight-blog'
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Blog',
+			title: 'CODEM8',
 			plugins: [starlightBlog()],
 			social: {
 				github: 'https://github.com/withastro/starlight',
