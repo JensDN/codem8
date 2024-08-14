@@ -7,6 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
 	integrations: [starlight({
 		title: 'CODEM8',
+		
 		plugins: [starlightBlog({
 			/* sidebar: [
 				  {
