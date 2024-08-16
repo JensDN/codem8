@@ -2,12 +2,10 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import tailwind from "@astrojs/tailwind";
-import deno from '@astrojs/deno';
+
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'server',
-	adapter: deno(),
 	integrations: [starlight({
 		title: 'CODEM8',
 		plugins: [starlightBlog({
