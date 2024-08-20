@@ -11,21 +11,11 @@ export default defineConfig({
 	adapter: netlify(),
 	integrations: [starlight({
 		title: 'CODEM8',
-		plugins: [starlightBlog({
-			/* sidebar: [
-				  {
-					  label: 'Guides',
-					  items: [
-						  // Each item here is one entry in the navigation menu.
-						  { label: 'Example Guide', slug: 'guides/example' },
-					  ],
-				  },
-				  {
-					  label: 'Reference',
-					  autogenerate: { directory: 'reference' },
-				  },
-			], */
-		})],
+		plugins: [starlightBlog()],
+		components: {
+			// Override the default `Header` component.
+			Header: './src/components/Header.astro',
+		},
 		social: {
 			github: 'https://github.com/JensDN'
 		},

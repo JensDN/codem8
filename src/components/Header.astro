@@ -1,0 +1,16 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Header.astro';
+
+const isHomepage = Astro.props.slug === '';
+---
+
+{
+  isHomepage ? (
+    <div>Header</div>
+  ) : (
+    <Default {...Astro.props}>
+      <slot />
+    </Default>
+  )
+}
