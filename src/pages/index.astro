@@ -1,10 +1,28 @@
 ---
-import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
+const HOME_PAGE_PROPS : StarlightPageProps = {
+    frontmatter: {
+        title: 'home',
+        template: 'splash',
+        hero: {
+            title: 'test',
+            tagline: 'Take your stuff to the moon and back in the blink of an eye.',
+            image: {
+                alt: 'test',
+                file: {src: 'src/assets/houston.webp', height: 200, width: 200, format: 'webp'}
+            },
+            actions: [{text: 'To the blog',
+                link: '/blog',
+                icon: 'right-arrow'
+            }]
+                
+        }
+}
+}
 ---
 
 <StarlightPage
-    frontmatter={{ title: "Home", template: "splash"}}
-    headings={[]}
+    frontmatter={HOME_PAGE_PROPS.frontmatter}
 >
     <p>This is a custom homepage</p>
 </StarlightPage>
