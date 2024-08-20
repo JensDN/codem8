@@ -1,12 +1,26 @@
 ---
 import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
+const API_QUOTES_URL ="https://zenquotes.io/api/random/";
+
+async function getapi(url: string)
+{
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+
+const  quote =  await getapi(API_QUOTES_URL);
 const HOME_PAGE_PROPS : StarlightPageProps = {
     frontmatter: {
         title: 'home',
         template: 'splash',
         hero: {
-            title: 'test',
-            tagline: 'Take your stuff to the moon and back in the blink of an eye.',
+            title: quote[0].a,
+            tagline: quote[0].q,
             image: {
                 alt: 'test',
                 file: {src: 'src/assets/houston.webp', height: 200, width: 200, format: 'webp'}
@@ -24,5 +38,5 @@ const HOME_PAGE_PROPS : StarlightPageProps = {
 <StarlightPage
     frontmatter={HOME_PAGE_PROPS.frontmatter}
 >
-    <p>This is a custom homepage</p>
+    <p>{quote[0].q}</p>test
 </StarlightPage>
