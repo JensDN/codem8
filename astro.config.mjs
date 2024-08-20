@@ -2,11 +2,13 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import tailwind from "@astrojs/tailwind";
-
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://jensdn.github.io',
+	output: 'server',
+	adapter: netlify(),
 	integrations: [starlight({
 		title: 'CODEM8',
 		plugins: [starlightBlog({
