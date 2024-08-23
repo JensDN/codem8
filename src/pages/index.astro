@@ -1,5 +1,7 @@
 ---
+import '@/styles/global.css'
 import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
+import IconCloudDemo from '@/components/react/interactive-icon-cloud.component'
 const API_QUOTES_URL ="https://zenquotes.io/api/random/";
 
 async function getapi(url: string)
@@ -38,5 +40,8 @@ const HOME_PAGE_PROPS : StarlightPageProps = {
 <StarlightPage
     frontmatter={HOME_PAGE_PROPS.frontmatter}
 >
+test react
+<IconCloudDemo client:load ></IconCloudDemo>
+test react 
     <p>{quote[0].q}</p>test
 </StarlightPage>
