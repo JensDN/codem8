@@ -1,0 +1,16 @@
+---
+import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
+const PROJECTS_PAGE_PROPS : StarlightPageProps = {
+    frontmatter: {
+        title: 'Projects',
+
+}
+}
+---
+
+<StarlightPage
+    frontmatter={PROJECTS_PAGE_PROPS.frontmatter}
+    hasSidebar={false}
+    headings={[]}
+>
+</StarlightPage>
