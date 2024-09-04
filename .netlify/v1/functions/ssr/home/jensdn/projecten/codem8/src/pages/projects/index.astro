@@ -1,0 +1,20 @@
+---
+import StarlightPage, {
+  type StarlightPageProps,
+} from "@astrojs/starlight/components/StarlightPage.astro";
+import { ProjectsIndex } from "@/components/react/projects";
+
+const PROJECTS_PAGE_PROPS: StarlightPageProps = {
+  frontmatter: {
+    title: "Projects",
+  },
+};
+---
+
+<StarlightPage
+  frontmatter={PROJECTS_PAGE_PROPS.frontmatter}
+  hasSidebar={false}
+  headings={[]}
+>
+<ProjectsIndex client:load></ProjectsIndex>
+</StarlightPage>

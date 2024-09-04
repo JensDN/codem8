@@ -1,0 +1,47 @@
+---
+import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
+import IconCloudDemo from '@/components/react/interactive-icon-cloud.component'
+const API_QUOTES_URL ="https://zenquotes.io/api/random/";
+
+async function getapi(url: string)
+{
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+
+const  quote =  await getapi(API_QUOTES_URL);
+const HOME_PAGE_PROPS : StarlightPageProps = {
+    frontmatter: {
+        title: 'home',
+        template: 'splash',
+        hero: {
+            title: 'Welcome at codem8',
+            tagline: `${quote[0].q} -- ${quote[0].a}`,
+            image: {
+                alt: 'codem8 landing picture',
+                file: {src: 'src/assets/codem8-landing.png', height: 200, width: 200, format: 'png'}
+            },
+            actions: [{text: 'To the blog',
+                link: '/blog',
+                icon: 'right-arrow'
+            },
+            {text: 'To my projects',
+                link: '/projects',
+                icon: 'right-arrow'
+            }]
+                
+        }
+}
+}
+---
+
+<StarlightPage
+    frontmatter={HOME_PAGE_PROPS.frontmatter}
+>
+
+</StarlightPage>
