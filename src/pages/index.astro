@@ -1,6 +1,6 @@
 ---
 import StarlightPage, { type StarlightPageProps } from "@astrojs/starlight/components/StarlightPage.astro";
-import IconCloudDemo from '@/components/react/interactive-icon-cloud.component'
+import landingRef from "@/assets/codem8-landing.png"
 const API_QUOTES_URL ="https://zenquotes.io/api/random/";
 
 async function getapi(url: string)
@@ -24,7 +24,7 @@ const HOME_PAGE_PROPS : StarlightPageProps = {
             tagline: `${quote[0].q} -- ${quote[0].a}`,
             image: {
                 alt: 'codem8 landing picture',
-                file: {src: 'src/assets/codem8-landing.png', height: 200, width: 200, format: 'png'}
+                file: {src: landingRef.src, height: 200, width: 200, format: 'png'}
             },
             actions: [{text: 'To the blog',
                 link: '/blog',
