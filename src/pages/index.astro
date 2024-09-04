@@ -20,14 +20,18 @@ const HOME_PAGE_PROPS : StarlightPageProps = {
         title: 'home',
         template: 'splash',
         hero: {
-            title: quote[0].a,
-            tagline: quote[0].q,
+            title: 'Welcome ot codem8',
+            tagline: `${quote[0].q} \n -- ${quote[0].a}`,
             image: {
-                alt: 'test',
-                file: {src: 'src/assets/houston.webp', height: 200, width: 200, format: 'webp'}
+                alt: 'codem8 landing picture',
+                file: {src: 'src/assets/codem8-landing.png', height: 200, width: 200, format: 'png'}
             },
             actions: [{text: 'To the blog',
                 link: '/blog',
+                icon: 'right-arrow'
+            },
+            {text: 'To my projects',
+                link: '/projects',
                 icon: 'right-arrow'
             }]
                 
@@ -39,8 +43,4 @@ const HOME_PAGE_PROPS : StarlightPageProps = {
 <StarlightPage
     frontmatter={HOME_PAGE_PROPS.frontmatter}
 >
-test react
-<IconCloudDemo client:load ></IconCloudDemo>
-test react 
-    <p>{quote[0].q}</p>test
 </StarlightPage>
