@@ -13,6 +13,10 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [starlight({
     title: 'CODEM8',
+    logo: {
+      light: './src/assets/light-logo.svg',
+      dark: './src/assets/dark-logo.svg',
+    },
     plugins: [starlightBlog()],
     components: {
       // Override the default `Header` component.
