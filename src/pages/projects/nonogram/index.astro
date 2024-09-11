@@ -7,14 +7,15 @@ import { NonoGramInlog } from "@/components/react/projects/nonogram.inlog";
 const NONOGRAM_PAGE_PROPS: StarlightPageProps = {
   frontmatter: {
     title: "Nonogram",
+    tableOfContents: false
   },
+  hasSidebar: false,
 };
 ---
 
 <StarlightPage
   frontmatter={NONOGRAM_PAGE_PROPS.frontmatter}
-  hasSidebar={false}
-  headings={[]}
+  hasSidebar={NONOGRAM_PAGE_PROPS.hasSidebar}
 >
 <NonoGramInlog client:load></NonoGramInlog>
   

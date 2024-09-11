@@ -7,14 +7,15 @@ import { ProjectsIndex } from "@/components/react/projects";
 const PROJECTS_PAGE_PROPS: StarlightPageProps = {
   frontmatter: {
     title: "Projects",
+    tableOfContents:false
   },
+  hasSidebar: false,
 };
 ---
 
 <StarlightPage
   frontmatter={PROJECTS_PAGE_PROPS.frontmatter}
-  hasSidebar={false}
-  headings={[]}
+  hasSidebar={PROJECTS_PAGE_PROPS.hasSidebar}
 >
 <ProjectsIndex client:load></ProjectsIndex>
 </StarlightPage>
