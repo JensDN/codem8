@@ -5,7 +5,7 @@ const features = [
   {
     name: "NONO VS GRAM",
     description: "A Nonogram versus game",
-    href: "/",
+    href: "/projects/nonogram/game/1",
     cta: "Learn more",
     background: (
       <img className="absolute opacity-50" alt="" src={nonGramRef.src} />
