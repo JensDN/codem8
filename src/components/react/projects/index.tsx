@@ -1,4 +1,4 @@
-import { BentoCard, BentoGrid } from "@/UI/components/magicui/bento-grid";
+import { BentoCard, BentoGrid } from "@/UI/magicui/bento-grid";
 import nonGramRef from "@/assets/projects-cards/non-gram.jpeg";
 
 const features = [
